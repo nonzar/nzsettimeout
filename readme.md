@@ -1,6 +1,8 @@
 ##简介
-使用requestAnimationFrame通过判断时间来模拟setTimeout.
+使用 `requestAnimationFrame` 通过判断 `date` 来模拟 `setTimeout`.
+
 ##用法
+
 ###new NZSettimeout(callback,ms)
 实例化并传入回调和间隔毫秒,即时启动倒数.
 
