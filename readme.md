@@ -28,3 +28,9 @@ var timer = new NZSettimeout(function () {
 }, 1000);
 timer.stop = true;
 ```
+
+---
+
+##支持
+
+现代浏览器
