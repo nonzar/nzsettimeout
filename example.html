@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nzsettimeout</title>
+</head>
+<body>
+<script src="nz.settimeout.js"></script>
+<script>
+    //实例化
+    new NZSettimeout(function () {
+        console.log("instance");
+    }, 1000);
+    //执行前停止
+    var timer = new NZSettimeout(function () {
+        console.log(("timer"));
+    }, 1000);
+    timer.stop = true;
+    //覆盖setTimeout
+    window.setTimeout = function (cb, ms) {
+        return new NZSettimeout(cb, ms);
+    }
+    var timer2 = window.setTimeout(function () {
+        console.log("timer2");
+    }, 1000);
+    var timer3 = window.setTimeout(function () {
+        console.log("timer3");
+    }, 1000);
+    timer3.stop = true;
+</script>
+</body>
+</html>
